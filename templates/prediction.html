@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prediction | Thyroid Prediction</title>
+  <style>
+    /* CSS styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: purple;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    form {
+     border: 1px solid #ccc;
+    width: 400px;
+    padding: 20px;
+    border-radius: 4px;
+    margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #000;
+    }
+
+    input[type="text"],
+    input[type="radio"],
+    textarea {
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+      background-color: #f6f3f3;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: purple;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Thyroid Prediction</h1>
+  </header> 
+  <main> 
+  <div class="container">
+    <h2 style="text-align:center">Prediction</h2>
+
+    <form action="/prediction" method="POST">
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" required>
+   <br>
+        <label>Gender:</label>
+        <input type="radio" id="gender-male" name="gender" value="male" required><label for="gender-male">Male</label>
+        <input type="radio" id="gender-female" name="gender" value="female">
+        <label for="gender-female">Female</label>
+      <br>
+        <label for="sick">Sick:</label>
+        <input type="radio" id="sick-yes" name="sick" value="yes" required>
+        <label for="sick-yes">Yes</label>
+        <input type="radio" id="sick-no" name="sick" value="no" required>
+        <label for="sick-no">No</label>
+      <br>
+        <label for="pregnant">Pregnant:</label>
+        <input type="radio" id="pregnant-yes" name="pregnant" value="yes" required>
+        <label for="pregnant-yes">Yes</label>
+        <input type="radio" id="pregnant-no" name="pregnant" value="no">
+        <label for="pregnant-no">No</label>
+     <br>
+        <label for="thyroid-surgery">Thyroid Surgery:</label>
+        <input type="radio" id="thyroid-surgery-yes" name="thyroid-surgery" value="yes" required>
+        <label for="thyroid-surgery-yes">Yes</label>
+        <input type="radio" id="thyroid-surgery-no" name="thyroid-surgery" value="no">
+        <label for="thyroid-surgery-no">No</label>
+      <br>
+        <label for="hypothyroid">Hypothyroid:</label>
+        <input type="radio" id="hypothyroid-yes" name="hypothyroid" value="yes" required>
+        <label for="hypothyroid-yes">Yes</label>
+        <input type="radio" id="hypothyroid-no" name="hypothyroid" value="no">
+        <label for="hypothyroid-no">No</label>
+      <br>
+        <label for="hyperthyroid">Hyperthyroid:</label>
+        <input type="radio" id="hyperthyroid-yes" name="hyperthyroid" value="yes" required>
+        <label for="hyperthyroid-yes">Yes</label>
+        <input type="radio" id="hyperthyroid-no" name="hyperthyroid" value="no">
+        <label for="hyperthyroid-no">No</label>
+     <br>
+        <label for="goiter">Goiter:</label>
+        <input type="radio" id="goiter-yes" name="goiter" value="yes" required>
+        <label for="goiter-yes">Yes</label>
+        <input type="radio" id="goiter-no" name="goiter" value="no">
+        <label for="goiter-no">No</label>
+     <br>
+        <label for="TSH">TSH Value:</label>
+        <input type="text" id="TSH" name="TSH" required>
+      <br>
+        <label for="T3-measured">T3 Measured:</label>
+        <input type="radio" id="T3-measured-yes" name="T3-measured" value="yes" required>
+        <label for="T3-measured-yes">Yes</label>
+        <input type="radio" id="T3-measured-no" name="T3-measured" value="no">
+        <label for="T3-measured-no">No</label>
+     <br>
+        <label for="T3">T3 Value:</label>
+        <input type="text" id="T3" name="T3" required>
+      <br>
+        <label for="TT4">TT4 Value:</label>
+        <input type="text" id="TT4" name="TT4" required>
+     <br>
+        <label for="T4U">T4U Value:</label>
+        <input type="text" id="T4U" name="T4U" required>
+      <br>
+        <label for="FTI">FTI Value:</label>
+        <input type="text" id="FTI" name="FTI" required>
+      <br>
+      <input type="submit" value="Predict">
+    </form>
+    <h3 style="text-align:center">Prediction Result:</h3>
+    <p style="text-align:center">{{ prediction_result }}</p>
+  </div>
+  </main>
+  <footer>
+    <p>&copy; 2023 Your Website Name. All rights reserved.</p>
+  </footer>
+  
+</body>
+</html>
